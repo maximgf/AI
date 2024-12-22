@@ -159,7 +159,7 @@ model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
 
 model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3), loss='binary_crossentropy',
               metrics=[tf.keras.metrics.AUC(curve='pr', name='auc')])
-model.fit(X, Y, epochs=1000, class_weight={0: 1, 1: np.sqrt(Y.shape[0])-1})
+model.fit(X, Y, epochs=500, class_weight={0: 1, 1: np.sqrt(Y.shape[0])-1})
 
 # Сохранение обученной модели
 print("Сохранение обученной модели...")
